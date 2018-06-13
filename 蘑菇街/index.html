@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+	<title>蘑菇街</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+</head>
+<body>
+	<!-- 导航 -->
+	<div class="nav">
+		<form>
+			<input type="text" >
+		</form>
+		<div class="nav_logo"></div>
+	</div>
+	<!-- 轮播图 -->
+	<div>
+		<div class="top_nav">
+			<ul class="top_nav1">
+				<li class="top_n1 change">
+					<a href="###"><img src="img/ad1.jpg" class="ad1"></a>
+				</li>
+			</ul>
+		</div>
+	    <div class="top_point">
+	          <span class="oran"></span>
+	          <span></span>
+	          <span></span>
+	          <span></span>
+	          <span></span>
+	          <span></span>
+	          <span></span>
+	    </div>
+	</div>
+    <!-- 分类 -->
+    <div>
+	    <div id="show" v-cloak>
+		    <div class="change" v-for="mess in message">
+		    	<a href="###">
+			    	<img :src="mess.image" class="show_1">
+			    </a>
+		    	<p class="note1" v-cloak>{{mess.name}}</p>
+		    </div>
+	    </div>
+	    <div id="show1" v-cloak>
+		    <div class="change" v-for="mes in message2">
+		    	<a href="###">
+		    		<img :src="mes.image" class="show_1">
+		    	</a>
+		    	<p class="note1" v-cloak>{{mes.name}}</p>
+		    </div>
+	    </div>
+	</div>
+    <!-- 更多分类 -->
+	<div id="more">
+		<a href="###">
+			<span>更多分类</span></br>
+			<span class="triangle"></span>
+		</a>
+	</div>
+	<!-- 直播特卖 -->
+	<div class="dis"></div>
+	<!-- 穿搭课堂 -->
+	<div id="part2" v-cloak>
+		<a href="###">
+			<span class="part2_ti">{{title}}</span>
+			<span class="part2_ti2">{{title1}}</span>
+			<span class="part2_ti3">全部 ></span>
+		</a>
+		<ul class="part2_al" v-cloak>
+			<li v-for="pic in message" class="part2_se">
+				<a href="###">
+					<img :src="pic.image" class="part2_ch">
+					<span class="note1">{{pic.name}}</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="part2_al2" v-cloak>
+			<li class="part2_se2" v-for="pic in show">
+				<a href="###">
+					<img :src="pic.image" class="part2_ch2">
+					<div class="part2_txt">
+						<p class="note1">{{pic.name}}</p>
+						<p class="note2">{{pic.name2}}</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="dis"></div>
+	<!-- 今日必买 -->
+	<div id="part3" v-cloak>
+		<a href="###">
+			<span class="part2_ti">{{title}}</span>
+			<span class="part2_ti2">{{title1}}</span>
+		</a>
+		<div class="part3_al3">
+			<ul class="change1" v-cloak>
+				<li class="part3_se s1">
+					<a href="###">
+						<div class="part3_ti">
+							<span class="n4">限时快抢</span>
+							<p class="n2">仙女套装19元</p>
+							<p class="n3">热下美衣1元</p>
+						</div>
+						<div><img src="img/best1.png" class="part3_ch"></div>
+					</a>
+				</li>
+				<li class="part3_se s2">
+					<a href="###">
+						<div class="part3_ti">
+							<span class="n5">超级补贴</span>
+							<p class="n2">夏装仅需9.9元</p>
+							<p class="n3">包邮底价</p>
+						</div>
+						<div><img src="img/best2.png" class="part3_ch"></div>
+					</a>
+				</li>
+			</ul>
+			<ul class="change1">
+				<li class="part3_se s3">
+					<a href="###">
+						<div class="part3_ti">
+							<span class="n1">品牌团购</span>
+							<p class="n2">爆款19.9元</p>
+							<p class="n3">限时特价</p>
+						</div>
+						<img src="img/best3.png" class="part3_ch">
+					</a>
+				</li>
+				<li class="part3_se change1">
+					<a href="###">
+						<div class="part3_ti">
+							<span class="n1">新品快抢</span>
+							<p class="n2">仙女套装19元</p>
+							<p class="n3">底价尝鲜</p>
+						</div>
+						<div><img src="img/best4.png" class="part3_ch"></div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="dis"></div>
+	<!-- 流行元素 -->
+	<div id="part4" v-cloak>
+		<a href="###">
+			<span class="part2_ti">{{title}}</span>
+			<span class="part2_ti2">{{title1}}</span>
+			<span class="part2_ti3">全部 ></span>
+		</a>
+	</div>
+    <!-- 底部 -->
+    <footer>
+        <ul id="bar" class="clearfix" v-cloak>
+            <li class="bar-item" v-for="mess in message">
+                <a href="###" class="bar-item-lk">
+                    <img class="icon" :src="mess.image">
+                    <span>{{mess.name}}</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

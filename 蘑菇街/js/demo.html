@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.class1{
+			background: black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+<!-- 	<div id="app">
+		<label for="r1">
+			<input type="checkbox" v-model="class1" id="r1">
+			<div v-bind:class="{'class1':class1}">
+				能擦出你看大V你上课玻尿酸看
+			</div>
+		</label>
+	</div> -->
+<!-- 	<div id="app">
+		<pre>
+			<a v-bind:href="url">百度</a>
+		</pre>
+	</div> -->
+<!-- 	<div id="app">
+		running
+		{{message | capitalize }}
+		<p>原始字符串{{message}}</p>
+		<p>更新字符串{{reverseMessage}}</p>
+	</div> -->
+	<div id="computed_props">
+		千米：<input type="text" v-model="kilemeters" >
+		米：<input type="text" v-model="meters" >
+	</div>
+	<p id="info"></p>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		// new Vue({
+		// 	el:'#app',
+		// 	data:{
+		// 		message:'running',
+		// 		class1:false,
+		// 		url:'www.baidu.com'
+		// 	},
+		// 	filters:{
+		// 		capitalize:function(value){
+		// 			if(!value)return ''
+		// 			value=value.toString()
+		// 		return value.charAt(0).toUpperCase()+value.slice(1)
+		// 		}
+		// 	},
+		// 	computed:{
+		// 		reverseMessage:function(){
+		// 			return this.message.split('').reverse().join('')
+		// 		}
+		// 	}
+
+		// });
+		var vm = new Vue({
+			el:'#computed_props',
+			data:{
+				kilemeters:0,
+				meters:0
+			},
+			watch:{
+				kilemeters:function(val){
+					this.kilemeters=val;
+					this.meters=val*1000;
+				},
+				meters:function(val){
+					this.kilemeters=val/1000;
+					this.meters=val;
+				}
+			}
+		});
+		vm.$watch('kilemeters',function(newc,oldc){
+			document.getElementById('info').innerHTML="修改前："+oldc+"，修改后"+ newc;
+		})
+	</script>
+</body>
+</html>
